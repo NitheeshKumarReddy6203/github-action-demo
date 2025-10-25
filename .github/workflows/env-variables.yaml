@@ -32,8 +32,6 @@ jobs:
           echo "My First Name is : $firstName"
           echo "My Middle Name is : $middleName"
           echo "My Last Name is : $lastName"
-        env:
-          lastName: 'Reddy'
 
       - name: Printing my Full Name
         run: echo "My Full Name is $firstName $middleName $lastName !"
