@@ -28,8 +28,8 @@ jobs:
 
       - name: Add Numbers
         id: sum
-        # run: echo "sum=$((${{ inputs.num1 }} + ${{ inputs.num2 }}))" >> $GITHUB_OUTPUT
-        run: echo "::set-output name=sum::$((${{ inputs.num1 }} + ${{ inputs.num2 }}))"
+        # run: echo "sum=$(( ${{ inputs.num1 || 5 }} + ${{ inputs.num2 || 10 }} ))" >> $GITHUB_OUTPUT
+        # run: echo "::set-output name=sum::$((${{ inputs.num1 }} + ${{ inputs.num2 }}))"
 
       - name: Display sum
         run: echo "the sum of ${{ inputs.num1 }} and ${{ inputs.num2 }} is ${{  steps.sum.outputs.sum }}"
