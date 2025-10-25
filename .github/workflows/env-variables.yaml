@@ -26,6 +26,8 @@ jobs:
           echo "Today we are here to Practice Env Variables"
 
       - name: Printing my Name using the env varibales
+        env:
+          lastName: 'Reddy'
         run: |
           echo "My First Name is : $firstName"
           echo "My Middle Name is : $middleName"
