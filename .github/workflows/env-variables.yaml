@@ -1,0 +1,37 @@
+
+name: Env Variables Test
+
+on:
+
+  workflow_dispatch:
+
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+env:
+  firstName: 'Nitheesh'
+
+jobs:
+  env-varibales:
+    runs-on: ubuntu-latest
+    env:
+      middleName: 'Kumar'
+    steps:
+      - uses: actions/checkout@v4
+      - name: Intro
+        run: |
+          echo "Hello Everyone"
+          echo "Today we are here to Practice Env Variables"
+
+      - name: Printing my Name using the env varibales
+        run: |
+          echo "My First Name is : $firstName"
+          echo "My Middle Name is : $middleName"
+          echo "My Last Name is : $lastName"
+        env:
+          lastName: 'Reddy'
+
+      - name: Printing my Full Name
+        run: echo "My Full Name is $firstName $middleName $lastName !"
