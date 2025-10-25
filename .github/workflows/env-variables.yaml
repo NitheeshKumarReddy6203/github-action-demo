@@ -35,3 +35,6 @@ jobs:
 
       - name: Printing my Full Name
         run: echo "My Full Name is $firstName $middleName $lastName !"
+
+      - name: Printing the Configuration VARIABLE
+        run: echo "My Full Name is ${{vars.INITAIL}} $firstName $middleName $lastName !"
