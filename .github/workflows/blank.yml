@@ -49,9 +49,9 @@ jobs:
       #Installing two numbers Script
       - name: Add Two Numbers script
         run: |
-          python_scripts/add.py
+          python python_scripts/add.py
 
       #Running the test cases
       - name: Run Tests
         run: |
-          python_scripts/test.py
+          python python_scripts/test.py
