@@ -34,3 +34,24 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+      
+      # Setting up of Python Version
+      - name: Set Up python 
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      #Installing the Requirements.txt
+      - name: Install Dependencies
+        run: |
+          pip install -r requirements.txt
+
+      #Installing two numbers Script
+      - name: Add Two Numbers script
+        run: |
+          python_scripts/add.py
+
+      #Running the test cases
+      - name: Run Tests
+        run: |
+          python_scripts/test.py
