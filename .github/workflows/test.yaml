@@ -1,0 +1,44 @@
+
+name: Build
+
+on:
+
+  workflow_dispatch:
+
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  # workflow_run:
+  #   workflows: ["Build Workflow"]
+  #   types:
+  #     - completed
+
+jobs:
+  test:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v4
+
+        # Set up Python
+        - name: Set Up python 
+          uses: actions/setup-python@v5
+          with:
+            python-version: '3.x'
+
+        # Install Dependencies
+        - name: Install Dependencies
+          run: |
+            pip install -r requirements.txt
+        
+        # Doing Multiplication table here 
+        - name: Do table 2 Multiplication
+          run: |
+            python python_scripts/twotable.py
+
+        - name: testing the python add Numbers Test Cases
+          run: |
+            python python_scripts/test.py
+
+
