@@ -34,7 +34,6 @@ jobs:
         # TEST: test123, TEST1 : echo Hello
       - name: Getting a Secret Value from Repository
         run: |
-          
           echo "Secret value for test is: ${{ secrets.TEST }} "
           echo " "
           echo "Secret Value for test 2 is : ${{ secrets.TEST1 }} "
