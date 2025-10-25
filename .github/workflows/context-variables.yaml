@@ -27,7 +27,7 @@ jobs:
 
       - name: Getting the Context Variables
         run: |
-          echo My Repository Name: {{ github.repository }} !
-          echo My Workflow Name: {{ github.workflow }} !
-          echo My Triggred Action Name: {{ github.triggering_actor }} !
+          echo "My Repository Name: ${{ github.repository }} !"
+          echo "My Workflow Name: ${{ github.workflow }} !"
+          echo "My Triggred Action Name: ${{ github.triggering_actor }} !"
         
