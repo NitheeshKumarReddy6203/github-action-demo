@@ -51,7 +51,23 @@ jobs:
         run: |
           python python_scripts/add.py
 
-      #Running the test cases
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Set up Python
+      - name: Set Up python 
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      # Install Dependencies
+      - name: Install Dependencies
+        run: |
+          pip install -r requirements.txt
+
+      # Running the test cases
       - name: Run Tests
         run: |
           python python_scripts/test.py
