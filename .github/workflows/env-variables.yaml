@@ -34,7 +34,7 @@ jobs:
           echo "My Last Name is : $lastName"
 
       - name: Printing my Full Name
-        run: echo "My Full Name is $firstName $middleName $lastName !"
+        run: echo "My Full Name is $firstName $middleName $lastName !" #Reddy wont come here becuse it is a step variable
 
       - name: Printing the Configuration VARIABLE
-        run: echo "My Full Name is ${{vars.INITAIL}} $firstName $middleName $lastName !"
+        run: echo "My Full Name is ${{vars.INITAIL}} $firstName $middleName $lastName !"  #Reddy wont come here becuse it is a step variable

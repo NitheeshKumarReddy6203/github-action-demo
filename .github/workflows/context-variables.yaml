@@ -1,0 +1,33 @@
+
+name: Context Variables
+
+on:
+
+  workflow_dispatch:
+
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+env:
+  firstName: 'Nitheesh'
+
+jobs:
+  context-varibales:
+    runs-on: ubuntu-latest
+    env:
+      middleName: 'Kumar'
+    steps:
+      - uses: actions/checkout@v4
+      - name: Intro
+        run: |
+          echo "Hello Everyone"
+          echo "Today we are here to Practice the Context Variables"
+
+      - name: Getting the Context Variables
+        run: |
+          echo "My Repository Name: {{ github.repository }} !"
+          echo "My Workflow Name: {{ github.workflow }} !"
+          echo "My Triggred Action Name: {{ github.triggering_actor }} !"
+        
